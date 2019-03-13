@@ -1,0 +1,154 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nuke-build/nuke/master/source/Nuke.CodeGeneration/schema.json",
+  "references": [
+    "https://api.slack.com/docs/message-formatting",
+    "https://api.slack.com/docs/message-attachments"
+  ],
+  "name": "Slack",
+  "officialUrl": "https://api.slack.com",
+  "help": "Slack is a cloud-based set of proprietary team collaboration tools and services, founded by Stewart Butterfield. Slack began as an internal tool used by his company, Tiny Speck, in the development of Glitch, a now defunct online game.",
+  "dataClasses": [
+    {
+      "name": "MicrosoftTeamsMessageCard",
+      "extensionMethods": true,
+      "properties": [
+        {
+          "name": "Summary",
+          "type": "string",
+          "json": "summary",
+          "help": " A string used for summarizing card content. This will be shown as the message subject. This is required if the text parameter isn't populated."
+        },
+        {
+          "name": "ThemeColor",
+          "type": "string",
+          "json": "themeColor",
+          "help": "Specifies a custom brand color for the card. The color will be displayed in a non-obtrusive manner."
+        },
+        {
+          "name": "Text",
+          "type": "string",
+          "json": "text",
+          "help": "The main text of the card. This will be rendered below the sender information and optional title, and above any sections or actions present."
+        },
+        {
+          "name": "Title",
+          "type": "string",
+          "json": "title",
+          "help": "A title for the Connector message. Shown at the top of the message."
+        },
+        {
+          "name": "Sections",
+          "type": "List<MicrosoftTeamsMessageSection>",
+          "json": "sections"
+        },
+        {
+          "name": "PotentialAction",
+          "type": "List<MicrosoftTeamsMessagePotentialAction>",
+          "json": "potentialAction"
+        }
+      ]
+    },
+    {
+      "name": "MicrosoftTeamsMessageFacts",
+      "extensionMethods": true,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "string",
+          "json": "name",
+          "help": "The key."
+        },
+        {
+          "name": "Value",
+          "type": "string",
+          "json": "value",
+          "help": "The value."
+        }
+      ]
+    },
+    {
+      "name": "MicrosoftTeamsMessagePotentialAction",
+      "extensionMethods": true,
+      "properties": [
+        {
+          "name": "Context",
+          "type": "string",
+          "json": "@context",
+          "help": "Actions can be presented to the user by including a Schema.org JSON-LD object."
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "json": "@type",
+          "help": "Currently only supports ViewAction, which creates a hyperlinked action button at the bottom of the connector card."
+        },
+        {
+          "name": "Name",
+          "type": "string",
+          "json": "short",
+          "help": "Name of the action. (Shown as the Button text)."
+        },
+        {
+          "name": "Target",
+          "type": "List<string>",
+          "json": "target",
+          "help": "Target of the action. (The destination hyperlink)."
+        }
+      ]
+    },
+    {
+      "name": "MicrosoftTeamsMessageSection",
+      "extensionMethods": true,
+      "properties": [
+        {
+          "name": "Title",
+          "type": "string",
+          "json": "title",
+          "help": "The title is displayed as larger, bold text near the top of a message attachment."
+        },
+        {
+          "name": "ActivityTitle",
+          "type": "string",
+          "json": "activityTitle",
+          "help": "Title of the event or action. Often this will be the name of the \"actor\"."
+        },
+        {
+          "name": "ActivitySubtitle",
+          "type": "string",
+          "json": "activitySubtitle",
+          "help": "A subtitle describing the event or action. Often this will be a summary of the action."
+        },
+        {
+          "name": "ActivityImage",
+          "type": "string",
+          "json": "activityImage",
+          "help": "An image representing the action. Often this is an avatar of the \"actor\" of the activity."
+        },
+        {
+          "name": "ActivityText",
+          "type": "string",
+          "json": "activityText",
+          "help": "A full description of the action."
+        },
+        {
+          "name": "Facts",
+          "type": "List<MicrosoftTeamsMessageFacts>",
+          "json": "facts",
+          "help": "A list of facts, displayed as key-value pairs."
+        },
+        {
+          "name": "Text",
+          "type": "string",
+          "json": "text",
+          "help": "Optional text that will appear before the activity."
+        },
+        {
+          "name": "Markdown",
+          "type": "bool?",
+          "json": "markdown",
+          "help": "Set this to false to disable markdown parsing on this section's content. Markdown parsing is enabled by default."
+        }
+      ]
+    }
+  ]
+}
