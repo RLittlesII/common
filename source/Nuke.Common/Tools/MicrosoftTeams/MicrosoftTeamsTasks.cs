@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Microsoft.Build.Utilities;
+using Newtonsoft.Json;
 using Nuke.Common.Tooling;
 
 namespace Nuke.Common.Tools.MicrosoftTeams
@@ -19,6 +21,8 @@ namespace Nuke.Common.Tools.MicrosoftTeams
         public static async Task SendMicrosoftTeamsMessageAsync(Configure<MicrosoftTeamsMessageCard> configurator, string webhook)
         {
             var message = configurator(new MicrosoftTeamsMessageCard());
+            var payload = JsonConvert.SerializeObject(message);
+            var data = new NameValueCollection { ["payload"] = payload };
 
             using (var client = new WebClient())
             {

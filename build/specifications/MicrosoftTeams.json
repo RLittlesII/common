@@ -1,12 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/nuke-build/nuke/master/source/Nuke.CodeGeneration/schema.json",
   "references": [
-    "https://api.slack.com/docs/message-formatting",
-    "https://api.slack.com/docs/message-attachments"
+    "https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/cards/cards?view=msteams-client-js-latest"
   ],
-  "name": "Slack",
-  "officialUrl": "https://api.slack.com",
-  "help": "Slack is a cloud-based set of proprietary team collaboration tools and services, founded by Stewart Butterfield. Slack began as an internal tool used by his company, Tiny Speck, in the development of Glitch, a now defunct online game.",
+  "name": "MicrosoftTeams",
+  "officialUrl": "https://teams.microsoft.com",
+  "help": "Microsoft Teams is a hub for teamwork in Office 365. Keep all your team's chats, meetings, files, and apps together in one place.",
   "dataClasses": [
     {
       "name": "MicrosoftTeamsMessageCard",
